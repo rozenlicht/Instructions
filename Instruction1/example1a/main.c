@@ -22,4 +22,3 @@ int main ( void )
     printf( "%1.2f\n" , x );
   }
 }
-

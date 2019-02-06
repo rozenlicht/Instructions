@@ -23,6 +23,32 @@ int main ( void )
 	printf("Enter the amount in Eurocents : ");
 	scanf("%d",&amount);	
 
+  int error_flag = 0;
+
+  if(amount % 5 != 0)
+  {
+    error_flag = -1;
+    printf("Amount %i not divisable by 5.\n", amount);
+    
+  }
+
+  if(amount < 0)
+  {
+    error_flag = -2;
+    printf("Amount %i not positive.\n", amount);
+  } 
+
+  if(amount > 1000)
+  {
+    error_flag = -3;
+    printf("Amount %i too large. Please use less than 1000 cents.\n", amount);
+  }
+
+  if(error_flag < 0)
+  {
+    return error_flag;
+  }
+
 	current = amount;                    //set total to current
     
 	int i = 0;
